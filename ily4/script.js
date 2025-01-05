@@ -76,17 +76,3 @@ var c = document.getElementById('alx');
       }
   }, 25);
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Create an audio element
-    const audio = new Audio('Die.mp3'); // Replace with your audio file path
-    
-    // Optionally set audio properties
-    audio.loop = true; // Set to true to loop the music
-    audio.volume = 0.5; // Adjust the volume (0.0 to 1.0)
-
-    // Attempt to play the audio
-    audio.play().catch(function (error) {
-        console.error("Playback failed:", error);
-        alert("Audio playback requires user interaction in some browsers. Click to start music!");
-    });
-});
