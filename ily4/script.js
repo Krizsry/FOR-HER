@@ -77,18 +77,16 @@ var c = document.getElementById('alx');
   }, 25);
 
   document.addEventListener("DOMContentLoaded", function () {
-    const audio = new Audio('Die.mp3'); // Replace with your actual file path
+    // Create an audio element
+    const audio = new Audio('Die.mp3'); // Replace with your audio file path
     
-    audio.loop = true; // Enable looping
-    audio.volume = 0.5; // Set desired volume level
-    audio.muted = true; // Start muted to bypass restrictions
+    // Optionally set audio properties
+    audio.loop = true; // Set to true to loop the music
+    audio.volume = 0.5; // Adjust the volume (0.0 to 1.0)
 
-    // Play audio muted
-    audio.play().then(() => {
-        // Unmute after it starts playing
-        audio.muted = false;
-        console.log("Music is playing automatically.");
-    }).catch((error) => {
-        console.error("Failed to play audio:", error);
+    // Attempt to play the audio
+    audio.play().catch(function (error) {
+        console.error("Playback failed:", error);
+        alert("Audio playback requires user interaction in some browsers. Click to start music!");
     });
 });
