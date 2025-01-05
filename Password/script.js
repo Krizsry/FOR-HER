@@ -105,3 +105,16 @@ function showNotification(message) {
 // Initialize the animation in reversed state
 timeline.reverse();
 timeline.play();
+
+// Create an audio element for the beep sound
+const beepSound = new Audio('Beep.mp3'); // Replace with the correct path to your beep.mp3
+
+// Play the beep sound when the notification is shown
+function showNotification(message) {
+  beepSound.play(); // Play the beep sound
+  notification.innerText = message;
+  notification.style.display = "block";
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000); // Hide notification after 3 seconds
+}

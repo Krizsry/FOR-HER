@@ -257,3 +257,20 @@ onresize();
 setCircles();
 ctx.strokeStyle = "hsla(" + getRandomInt(0, 360) + ",90%,60%,0.6)";
 start();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = new Audio('Sun.mp3'); // Replace with your actual file path
+    
+    audio.loop = true; // Enable looping
+    audio.volume = 0.5; // Set desired volume level
+    audio.muted = true; // Start muted to bypass restrictions
+
+    // Play audio muted
+    audio.play().then(() => {
+        // Unmute after it starts playing
+        audio.muted = false;
+        console.log("Music is playing automatically.");
+    }).catch((error) => {
+        console.error("Failed to play audio:", error);
+    });
+});
