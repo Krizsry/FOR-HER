@@ -203,16 +203,19 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Create an audio element
-  const audio = new Audio('Five.mp3'); // Replace with your audio file path
-  
-  // Optionally set audio properties
-  audio.loop = true; // Set to true to loop the music
-  audio.volume = 0.5; // Adjust the volume (0.0 to 1.0)
+    const audio = new Audio('Five.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.muted = true; // Start muted
+    audio.play().then(function() {
+        console.log("Audio started");
+    }).catch(function (error) {
+        console.error("Playback failed:", error);
+    });
 
-  // Attempt to play the audio
-  audio.play().catch(function (error) {
-      console.error("Playback failed:", error);
-      alert("Audio playback requires user interaction in some browsers. Click to start music!");
-  });
+    // Unmute after a short delay, if needed
+    setTimeout(() => {
+        audio.muted = false;
+    }, 1000); // Unmute after 1 second
 });
+
