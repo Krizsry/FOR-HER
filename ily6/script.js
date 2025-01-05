@@ -202,20 +202,4 @@
 })();
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const audio = new Audio('Five.mp3');
-    audio.loop = true;
-    audio.volume = 0.5;
-    audio.muted = true; // Start muted
-    audio.play().then(function() {
-        console.log("Audio started");
-    }).catch(function (error) {
-        console.error("Playback failed:", error);
-    });
-
-    // Unmute after a short delay, if needed
-    setTimeout(() => {
-        audio.muted = false;
-    }, 1000); // Unmute after 1 second
-});
 
