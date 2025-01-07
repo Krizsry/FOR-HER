@@ -4,7 +4,7 @@ const revealedInput = document.querySelector(".revealed-input");
 const button = document.querySelector(".button");
 
 const correctPassword = "9/29/24"; // Set the correct password
-const redirectUrl = "https://app.sane.fyi/kriz/81bdf3ce-cb28-11ef-aaac-4387590202eb"; // Set the redirect URL
+const redirectUrl = "https://app.sane.fyi/s/81bdf3ce-cb28-11ef-aaac-4387590202eb?t=bvdOPWxms5ghdxfbH2YE&utm_source=share-menu&utm_medium=web"; // Set the redirect URL
 
 // Create a notification element
 const notification = document.createElement("div");
